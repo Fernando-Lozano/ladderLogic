@@ -16,7 +16,7 @@ printer.addEventListener("click", () => {
 const tools = document.querySelectorAll(".tool");
 
 // keeps track of which component was previously selected
-let prevSelected = document.querySelector("#draw");
+let prevSelected = document.querySelector("#pencil");
 prevSelected.classList.toggle("selected");
 // keeps track of currently selected
 let selected = prevSelected.dataset.value;
