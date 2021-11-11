@@ -1,9 +1,8 @@
-const canvas = document.querySelector(".draw");
-const ctx = canvas.getContext("2d");
 const dpi = window.devicePixelRatio;
 
-// fixed canvas blur from: https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da
-(function fix_dpi() {
+// Attention: might not need this if using konva
+// fixes canvas blur from: https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da
+function fix_dpi() {
     // create a style object that returns width and height
     let style = {
         height() {
@@ -16,10 +15,14 @@ const dpi = window.devicePixelRatio;
     //set the correct attributes for a crystal clear image!
     canvas.setAttribute('width', style.width() * dpi);
     canvas.setAttribute('height', style.height() * dpi);
-})();
+}
 
-// temp
-ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+// A stage is used to contain multiple layers
+const stage = new Konva.Stage({
+    container: 'container',
+    width: width,
+    height: height,
+});
 
 // prints canvas add button to call this
 // printJS({ printable: canvas.toDataURL(), type: "image" });

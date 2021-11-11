@@ -17,13 +17,15 @@
 /* ------- toolbar ------- */
 .toolbar {
     background-color: lightblue;
+    position: fixed;
     width: 20vw;
-    /* height: 100vh; */
+    height: 100%;
 }
 
 /* ------- main page ------- */
 .work {
     width: 80vw;
+    margin-left: 20vw;
 }
 .main-page {
   width: 210mm;
