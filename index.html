@@ -16,15 +16,24 @@
     <div class="main">
         <!-- ------- toolbar ------- -->
         <div class="toolbar">
-            <!-- temp icons -->
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
-            <i class="fab fa-accessible-icon fa-7x"></i>
+            <div class="states">
+                <p>states</p>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+
+            </div>
+            <div class="drawTools">
+                <p>drawing stuff</p>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+            </div>
+            <div class="components">
+                <p>components</p>                
+                <i class="fab fa-accessible-icon fa-7x"></i>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+                <i class="fab fa-accessible-icon fa-7x"></i>
+            </div>
         </div>
         <!-- ------- workspace ------- -->
         <div class="work">
@@ -38,15 +47,16 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <!-- Konva.js -->
-    <script src="./konva.min.js"></script>
+    <script src="./js/konva.min.js"></script>
     <!-- used to print the canvas -->
-    <script src="./print-js/dist/print.js"></script>
+    <script src="./js/print-js/dist/print.js"></script>
     <!-- variables for the following scripts -->
     <script>
         const container = document.querySelector("#container");
         const width = container.clientWidth;
         const height = container.clientHeight;
     </script>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/drawLines.js"></script>
 </body>
 </html>

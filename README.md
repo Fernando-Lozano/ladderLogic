@@ -18,6 +18,9 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
+- add buttons in toolbar
+- only one button in toolbar selected at a time
+-finish snapping lines
 - add images:
     - seperate folder
     - snap and remove with double click
@@ -51,3 +54,5 @@ This web app will provide a quick and easy way to draw and print small electrici
 - boiler plate
 - print canvas
 - learnt to snap lines to grid and export as image (see gridLinesAndSave folder)
+- fixed toolbar position
+- added snapping lines to main

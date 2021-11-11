@@ -25,4 +25,4 @@ const stage = new Konva.Stage({
 });
 
 // prints canvas add button to call this
-// printJS({ printable: canvas.toDataURL(), type: "image" });
+// printJS({ printable: stage.toDataURL({ pixelRatio: dpi }), type: "image" });
