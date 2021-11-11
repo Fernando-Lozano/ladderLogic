@@ -1,39 +1,12 @@
 /*
     fix: when mouse off canvas disable drawing
-    use gridLayer.hide(); to hide grid lines
     use stage.off(); to remove event listeners
     enable and disable event listeners according to what item in toolbar is selected
 */
 
-const blockSnapSize = width / 30; // tweak this to suite your needs
-// first we need Konva core things: stage and layer
-
-// ------- adds grid lines as a guide -------
-const gridLayer = new Konva.Layer();
-const padding = blockSnapSize;
-
-// x lines
-for (let i = 0; i <= width / padding; i++) {
-    gridLayer.add(new Konva.Line({
-        points: [Math.round(i * padding), 0, Math.round(i * padding), height],
-        stroke: '#ddd',
-        strokeWidth: 1,
-    }));
-}
-//  y lines
-for (let j = 0; j < height / padding; j++) {
-    gridLayer.add(new Konva.Line({
-        points: [0, Math.round(j * padding), width, Math.round(j * padding)],
-        stroke: '#ddd',
-        strokeWidth: 0.5,
-    }));
-}
-
-stage.add(gridLayer);
-
-
 // ------- draws lines to grid -------
 const drawLayer = new Konva.Layer();
+
 stage.add(drawLayer);
 
 let isPaint = false;
