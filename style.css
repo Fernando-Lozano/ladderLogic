@@ -21,6 +21,27 @@
     width: 20vw;
     height: 100%;
 }
+.tools {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  width: 80px;
+  height: 80px;
+  border-radius: 16%;
+}
+.item:hover {
+  background-color: lightcoral;
+}
+.selected {
+  background-color: lightgreen;
+}
 
 /* ------- main page ------- */
 .work {

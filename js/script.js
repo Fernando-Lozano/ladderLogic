@@ -1,21 +1,34 @@
 const dpi = window.devicePixelRatio;
 
-// Attention: might not need this if using konva
-// fixes canvas blur from: https://medium.com/wdstack/fixing-html5-2d-canvas-blur-8ebe27db07da
-function fix_dpi() {
-    // create a style object that returns width and height
-    let style = {
-        height() {
-            return +getComputedStyle(canvas).getPropertyValue('height').slice(0, -2);
-        },
-        width() {
-            return +getComputedStyle(canvas).getPropertyValue('width').slice(0, -2);
-        }
-    }
-    //set the correct attributes for a crystal clear image!
-    canvas.setAttribute('width', style.width() * dpi);
-    canvas.setAttribute('height', style.height() * dpi);
-}
+// print
+const printer = document.querySelector("#printButton");
+
+printer.addEventListener("click", () => {
+    // removes grid lines for printing purposes
+    gridLayer.hide();
+
+    printJS({ printable: stage.toDataURL({ pixelRatio: dpi }), type: "image" });
+
+    // adds grid lines back in
+    gridLayer.show();
+});
+// determine which item in toolbar is selected
+const tools = document.querySelectorAll(".tool");
+
+// keeps track of which component was previously selected
+let prevSelected = document.querySelector("#draw");
+prevSelected.classList.toggle("selected");
+// keeps track of currently selected
+let selected = prevSelected.dataset.value;
+
+tools.forEach((tool) => {
+    tool.addEventListener("click", function() {
+        prevSelected.classList.toggle("selected");
+        this.classList.toggle("selected");
+        selected = this.dataset.value;
+        prevSelected = this;
+    });
+});
 
 // A stage is used to contain multiple layers
 const stage = new Konva.Stage({
@@ -25,4 +38,3 @@ const stage = new Konva.Stage({
 });
 
 // prints canvas add button to call this
-// printJS({ printable: stage.toDataURL({ pixelRatio: dpi }), type: "image" });
