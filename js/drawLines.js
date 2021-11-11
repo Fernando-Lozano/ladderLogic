@@ -10,7 +10,7 @@ const drawLayer = new Konva.Layer();
 stage.add(drawLayer);
 
 let isPaint = false;
-let mode = 'brush';
+let mode = 'pencil';
 let lastLine;
 
 stage.on('mousedown touchstart', function (e) {
@@ -21,9 +21,10 @@ stage.on('mousedown touchstart', function (e) {
     pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
     lastLine = new Konva.Line({
         stroke: '#df4b26',
-        strokeWidth: 5,
+        // make stroke width bigger for eraser so that no streaks are left behind
+        strokeWidth: mode === "pencil" ? 5 : 6,
         globalCompositeOperation:
-            mode === 'brush' ? 'source-over' : 'destination-out',
+            mode === 'pencil' ? 'source-over' : 'destination-out',
         // round cap for smoother lines
         lineCap: 'round',
         // add point twice, so we have some drawings even on a simple click
@@ -51,6 +52,25 @@ stage.on('mousemove touchmove', function (e) {
     lastLine.points(newPoints);
 });
 
+const pencil = document.querySelector("#pencil");
+const eraser = document.querySelector("#eraser");
+
+pencil.addEventListener("click", function() {
+    // keeps track of which button is selected
+    prevSelected.classList.remove("selected");
+    this.classList.add("selected");
+    prevSelected = this;
+
+    mode = this.dataset.value;
+});
+eraser.addEventListener("click", function() {
+    // keeps track of which button is selected
+    prevSelected.classList.remove("selected");
+    this.classList.add("selected");
+    prevSelected = this;
+
+    mode = this.dataset.value;
+});
 // reference gridLinesAndSave
 const select = document.getElementById('tool');
 select.addEventListener('change', function () {

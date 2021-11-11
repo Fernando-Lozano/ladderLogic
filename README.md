@@ -18,7 +18,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
-- maybe move each event listener to the corresponding files
+- remove and add listeners in drawLInes file
 -finish snapping lines
 - add images:
     - seperate folder
@@ -57,3 +57,4 @@ This web app will provide a quick and easy way to draw and print small electrici
 - added snapping lines to main
 - printer button works
 - added icons and basic functionality for button selection
+- moved pencil and eraser listeners in drawLines file

@@ -18,17 +18,6 @@ const tools = document.querySelectorAll(".tool");
 // keeps track of which component was previously selected
 let prevSelected = document.querySelector("#pencil");
 prevSelected.classList.toggle("selected");
-// keeps track of currently selected
-let selected = prevSelected.dataset.value;
-
-tools.forEach((tool) => {
-    tool.addEventListener("click", function() {
-        prevSelected.classList.toggle("selected");
-        this.classList.toggle("selected");
-        selected = this.dataset.value;
-        prevSelected = this;
-    });
-});
 
 // A stage is used to contain multiple layers
 const stage = new Konva.Stage({
