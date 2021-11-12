@@ -11,12 +11,19 @@ let isPaint = false;
 let mode = 'pencil';
 let lastLine;
 
+function noPaint() {
+    isPaint = false;
+    container.removeEventListener("mouseleave", noPaint);
+}
+
 function startDraw(e) {
+    container.addEventListener("mouseleave", noPaint);
     isPaint = true;
     const pos = stage.getPointerPosition();
     // adjust pointer position to nearest grid line
     pos.x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
     pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
+    console.log(pos.x, pos.y)
     lastLine = new Konva.Line({
         stroke: '#df4b26',
         // make stroke width bigger for eraser so that no streaks are left behind
@@ -31,7 +38,7 @@ function startDraw(e) {
 }
 
 function endDraw() {
-    isPaint = false;
+    noPaint;
 }
 
 // and core function - drawing
