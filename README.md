@@ -18,6 +18,8 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
+- add padding around grid lines (will make easier to track mouse movement when leaving the canvas)
+- fix drawing movement off of canvas
 - add images:
     - seperate folder
     - snap and remove with double click
@@ -36,6 +38,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - save and load states
 
 ## Learn:
+- officially learn git
 - add and remove images to grid and make sure this layer sits above grid lines and delete option
 - add and make text moveable and delete option
 - double clicks to delete(?)
