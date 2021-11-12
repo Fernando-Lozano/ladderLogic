@@ -1,8 +1,5 @@
-/*
-    fix: when mouse off canvas disable drawing--if possible
-*/
-
 // ------- draws lines to grid -------
+
 const drawLayer = new Konva.Layer();
 
 stage.add(drawLayer);
@@ -24,7 +21,6 @@ function startDraw(e) {
     // adjust pointer position to nearest grid line
     pos.x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
     pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
-    console.log(pos.x, pos.y)
     lastLine = new Konva.Line({
         stroke: '#df4b26',
         // make stroke width bigger for eraser so that no streaks are left behind

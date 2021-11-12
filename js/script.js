@@ -21,10 +21,7 @@ clearBtn.addEventListener("click", () => {
     // clear other layers here
 });
 
-// determine which item in toolbar is selected
-const tools = document.querySelectorAll(".tool");
-
-// keeps track of which component was previously selected
+// keeps track of which item was previously selected
 let prevSelected = document.querySelector("#pencil");
 prevSelected.classList.toggle("selected");
 
@@ -34,5 +31,3 @@ const stage = new Konva.Stage({
     width: width,
     height: height,
 });
-
-// prints canvas add button to call this

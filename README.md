@@ -37,6 +37,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - double clicks to delete(?)
 
 ## Ideas:
+- keep main functions on top and listeners in bottom
 - implement functionality in seperate folders and when done bring it all together
 - to highlight squares get inspiration from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
 
