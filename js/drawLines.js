@@ -38,7 +38,7 @@ function startDraw(e) {
 }
 
 function endDraw() {
-    noPaint;
+    noPaint();
 }
 
 // and core function - drawing
