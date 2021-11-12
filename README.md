@@ -38,12 +38,12 @@ This web app will provide a quick and easy way to draw and print small electrici
 - save and load states
 
 ## Learn:
-- implement these in seperate folders when done bring it all together
 - add and remove images to grid and make sure this layer sits above grid lines and delete option
 - add and make text moveable and delete option
 - double clicks to delete(?)
 
 ## Ideas:
+- implement functionality in seperate folders and when done bring it all together
 - to highlight squares get inspiration from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
 
 ## Potential problems:
