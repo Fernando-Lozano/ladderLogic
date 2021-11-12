@@ -18,27 +18,20 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
-- add padding around grid lines (will make easier to track mouse movement when leaving the canvas)
-- fix drawing movement off of canvas
+- create images on Inkscape, make readme in images folder for future guide to make components(maybe even leave a template)
 - add images:
     - seperate folder
     - snap and remove with double click
 - add text:
     - seperate folder
     - removable with double click
-- add temp print button
-- learn Konva basics
-- snap lines to grid
-- show grid when pencil is selected
 
 ## Todo on main:
-- snap lines to grid 
 - components (temp for now)
 - text
 - save and load states
 
 ## Learn:
-- officially learn git
 - add and remove images to grid and make sure this layer sits above grid lines and delete option
 - add and make text moveable and delete option
 - double clicks to delete(?)
@@ -61,3 +54,4 @@ This web app will provide a quick and easy way to draw and print small electrici
 - moved pencil and eraser listeners in drawLines file
 - added functionality to clear button
 - finished snapping lines. add and remove eventlisteners accordingly
+- fixed mouse off container issue

@@ -17,6 +17,7 @@ function noPaint() {
 }
 
 function startDraw(e) {
+    // fixes issue when mouse leaves the container
     container.addEventListener("mouseleave", noPaint);
     isPaint = true;
     const pos = stage.getPointerPosition();
