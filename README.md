@@ -58,3 +58,4 @@ This web app will provide a quick and easy way to draw and print small electrici
 - printer button works
 - added icons and basic functionality for button selection
 - moved pencil and eraser listeners in drawLines file
+- added functionality to clear button

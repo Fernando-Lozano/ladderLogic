@@ -1,9 +1,9 @@
 const dpi = window.devicePixelRatio;
 
-// print
-const printer = document.querySelector("#printButton");
+// print workspace
+const printBtn = document.querySelector("#print");
 
-printer.addEventListener("click", () => {
+printBtn.addEventListener("click", () => {
     // removes grid lines for printing purposes
     gridLayer.hide();
 
@@ -12,6 +12,15 @@ printer.addEventListener("click", () => {
     // adds grid lines back in
     gridLayer.show();
 });
+
+// clear workspace
+const clearBtn = document.querySelector("#clear");
+
+clearBtn.addEventListener("click", () => {
+    drawLayer.destroyChildren();
+    // clear other layers here
+});
+
 // determine which item in toolbar is selected
 const tools = document.querySelectorAll(".tool");
 
