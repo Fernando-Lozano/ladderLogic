@@ -1,4 +1,4 @@
-// ------- draw components -------
+/*-------------------------- draw components --------------------------*/
 
 const componentLayer = new Konva.Layer();
 
