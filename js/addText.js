@@ -30,7 +30,8 @@ function getText() {
 const add = document.querySelector("#addText");
 const textInput = document.querySelector("#textInput");
 // gets user text and adds it to container
-add.addEventListener("click", function() {
+add.addEventListener("submit", function(e) {
+    e.preventDefault();
     // gets user text
     const parent = this.parentElement;
     const text = textInput.value;

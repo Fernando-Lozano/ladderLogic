@@ -45,17 +45,17 @@ body {
 #textInput:focus {
   outline: 2px solid rgb(248, 149, 149);
 }
-#addText {
+#submit {
   background-color: lightgreen;
   border: none;
   padding: 6px;
   margin-left: 3px;
   border-radius: 0.2rem;
 }
-#addText:focus {
+#submit:focus {
   outline: 2px solid rgb(248, 149, 149);
 }
-#addText:hover {
+#submit:hover {
   background-color: rgb(163, 240, 163);
 }
 

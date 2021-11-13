@@ -18,6 +18,8 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
+- add exit button to remove popup text
+- shorten svg stop and start button bars
 - group pencil and eraser
 - clear text input and add focus
 - size grid, components, linewidth, and text until satisfied
@@ -25,7 +27,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 ## Todo on main:
 - save and load states
 - style component highlighter properly
-- add print js, validators, and confirms for main functions
+- add print js, and confirms for main functions
 - testing
 - landing page with video
 - deploy on github pages
@@ -56,3 +58,4 @@ This web app will provide a quick and easy way to draw and print small electrici
 - fixed bug
 - finished adding components
 - finished adding text
+- added validator to text input
