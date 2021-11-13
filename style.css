@@ -8,13 +8,52 @@
   size: A4;
   margin: 0;
 }
+body {
+  position: relative;
+}
+/*-------------------------- add text popup --------------------------*/
+.inputDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+  padding: 8px;
+  width: 260px;
+  height: 80px;
+  position: fixed;
+  top: calc(50% - 40px);
+  left: calc(50% - 130px);
+  z-index: 1;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+}
+#textInput {
+  outline: none;
+  border: none;
+  padding: 6px;
+  border-radius: 0.2rem;
+}
+#addText {
+  background-color: lightgreen;
+  outline: none;
+  border: none;
+  padding: 6px;
+  margin-left: 3px;
+  border-radius: 0.2rem;
+}
+#addText:hover {
+  background-color: rgb(163, 240, 163);
+}
 
+/*-------------------------- main --------------------------*/
 .main {
     display: flex;
     flex-direction: row;
 }
 
-/* ------- toolbar ------- */
+/*-------------------------- toolbar --------------------------*/
 .toolbar {
     background-color: lightblue;
     box-shadow: 0 0 1rem rgba(0,0,0,0.5);
@@ -50,7 +89,7 @@
   background-color: lightgreen;
 }
 
-/* ------- main page ------- */
+/*-------------------------- work space --------------------------*/
 .work {
     width: 80vw;
     margin-left: 20vw;
