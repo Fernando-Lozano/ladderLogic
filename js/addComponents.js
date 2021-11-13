@@ -6,6 +6,12 @@ stage.add(componentLayer);
 
 const components = document.querySelectorAll(".component");
 
+// hides highlighter if mouse leaves container
+function noHighlight() {
+    highlight.hide();
+};
+
+// hover effect from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
 // used to highlight area to place components
 const highlight = new Konva.Rect({
     x: 0,
@@ -19,7 +25,7 @@ const highlight = new Konva.Rect({
     dash: [20, 2]
 });
 componentLayer.add(highlight);
-highlight.hide();
+noHighlight();
 
 function highlighter() {
     // makes highlighter visible
@@ -36,9 +42,9 @@ function highlighter() {
     });
 }
 
-function addListeners() {
-    stage.on("mousemove", highlighter);
 
+function addComponentListeners() {
+    stage.on("mousemove", highlighter);
 }
 
 components.forEach(component => {
@@ -51,6 +57,9 @@ components.forEach(component => {
         // removes previous listeners
         stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
         // starts component functionality
-        addListeners();
+        addComponentListeners();
+        container.removeEventListener("mouseleave", containerFunc);
+        containerFunc = noHighlight;
+        container.addEventListener("mouseleave", containerFunc);
     });
 });

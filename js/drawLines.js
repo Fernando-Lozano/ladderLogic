@@ -8,14 +8,12 @@ let isPaint = false;
 let mode = 'pencil';
 let lastLine;
 
+// stops drawing if mouse leaves container
 function noPaint() {
     isPaint = false;
-    container.removeEventListener("mouseleave", noPaint);
 }
 
 function startDraw(e) {
-    // fixes issue when mouse leaves the container
-    container.addEventListener("mouseleave", noPaint);
     isPaint = true;
     const pos = stage.getPointerPosition();
     // adjust pointer position to nearest grid line
@@ -54,13 +52,15 @@ function drawing(e) {
     lastLine.points(newPoints);
 }
 
-function addListeners() {
+function addLineListeners() {
     stage.on('mousedown touchstart', startDraw);
     stage.on('mouseup touchend', endDraw);
     stage.on('mousemove touchmove', drawing);
 }
 // enables drawing for default setting
-addListeners();
+addLineListeners();
+containerFunc = noPaint;
+container.addEventListener("mouseleave", containerFunc);
 
 const pencil = document.querySelector("#pencil");
 const eraser = document.querySelector("#eraser");
@@ -76,7 +76,11 @@ pencil.addEventListener("click", function() {
     // removes previous listeners
     stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
     // starts drawing functionality
-    addListeners();
+    addLineListeners();
+    // listens for mouse leaving container
+    container.removeEventListener("mouseleave", containerFunc);
+    containerFunc = noPaint;
+    container.addEventListener("mouseleave", containerFunc);
 });
 eraser.addEventListener("click", function() {
     // keeps track of which button is selected
@@ -89,5 +93,9 @@ eraser.addEventListener("click", function() {
     // removes previous listeners
     stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
     // starts drawing functionality
-    addListeners();
+    addLineListeners();
+    // listens for mouse leaving container
+    container.removeEventListener("mouseleave", containerFunc);
+    containerFunc = noPaint;
+    container.addEventListener("mouseleave", containerFunc);
 });

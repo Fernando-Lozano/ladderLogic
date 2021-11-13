@@ -31,3 +31,6 @@ const stage = new Konva.Stage({
     width: width,
     height: height,
 });
+
+//  keeps track of handlers added to container
+let containerFunc;

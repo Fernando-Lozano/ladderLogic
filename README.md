@@ -18,18 +18,18 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
-- create images on Inkscape, make readme in images folder for future guide to make components(maybe even leave a template)
-- add images:
+- listen for click, on clickadd images:
     - seperate folder
-    - snap and remove with double click
+    - remove on click if eraser is selected(?)
 - add text:
     - seperate folder
     - removable with double click
 
 ## Todo on main:
-- components (temp for now)
+- components
 - text
 - save and load states
+- style component highlighter properly
 
 ## Learn:
 - add and remove images to grid and make sure this layer sits above grid lines and delete option
@@ -37,9 +37,8 @@ This web app will provide a quick and easy way to draw and print small electrici
 - double clicks to delete(?)
 
 ## Ideas:
+- keep all namespaces unique across all js files
 - keep main functions on top and listeners in bottom
-- implement functionality in seperate folders and when done bring it all together
-- to highlight squares get inspiration from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
 
 ## Potential problems:
 - grid lines when drawn fast make diagonal lines
@@ -56,3 +55,5 @@ This web app will provide a quick and easy way to draw and print small electrici
 - added functionality to clear button
 - finished snapping lines. add and remove eventlisteners accordingly
 - fixed mouse off container issue
+- added hover effect for adding components
+- fixed bug
