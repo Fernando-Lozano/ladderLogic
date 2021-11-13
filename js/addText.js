@@ -1,15 +1,16 @@
 /*-------------------------- draw text --------------------------*/
 
-
 // maybe just add them to component layer ?
 
+// displays text input
+function showPopup() {
+    popup.classList.toggle("showInput");
+}
 
-// hover effect from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
-// used to highlight area to place components
-
-function addText() {
-
-    //  get user input here
+const add = document.querySelector("#addText");
+// gets user text and adds it to container
+add.addEventListener("click", function() {
+    // get user text
 
     // add text to container
     let x = highlight.x();
@@ -29,16 +30,17 @@ function addText() {
     component.on("dblclick", function () {
         this.destroy();
     });
-}
 
-function addComponentListeners() {
+
+});
+
+function addTextListeners() {
     stage.on("mousemove", highlighter);
-    highlight.on('mousedown touchstart', addText);
+    highlight.on('mousedown touchstart', showPopup);
 }
 
 const textBtn = document.querySelector("#text");
 const popup = document.querySelector(".inputDiv");
-
 
 textBtn.addEventListener("click", function() {
         // keeps track of which button is selected
@@ -46,13 +48,10 @@ textBtn.addEventListener("click", function() {
         this.classList.add("selected");
         prevSelected = this;
 
-        popup.classList.toggle("showInput");
-
         // removes previous listeners: lives in script.js
         removeListeners();
         // starts component functionality
-        addComponentListeners();
-
+        addTextListeners();
 
         container.removeEventListener("mouseleave", containerFunc);
         containerFunc = noHighlight;
