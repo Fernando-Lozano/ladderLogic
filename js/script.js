@@ -18,7 +18,10 @@ const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", () => {
     drawLayer.destroyChildren();
-    componentLayer.destroyChildren();
+    let nodes = componentLayer.find("Image");
+    nodes.forEach(node => {
+        node.destroy();
+    });
     // clear other layers here
 });
 
