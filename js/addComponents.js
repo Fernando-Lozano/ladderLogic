@@ -33,18 +33,32 @@ function highlighter() {
 
     // gets mouse position
     const pos = stage.getPointerPosition();
-    pos.x += blockSnapSize / 2;
     pos.y += blockSnapSize / 2;
 
     highlight.position({
-        x: Math.floor(pos.x / blockSnapSize) * blockSnapSize - blockSnapSize / 2,
+        x: Math.floor(pos.x / blockSnapSize) * blockSnapSize,
         y: Math.floor(pos.y / blockSnapSize) * blockSnapSize - blockSnapSize / 2
     });
 }
 
+let imgObj;
+function addComponent() {
+    let x = highlight.x();
+    let y = highlight.y();
+
+    let component = new Konva.Image({
+        x: x,
+        y: y,
+        image: imgObj,
+        width: blockSnapSize,
+        height: blockSnapSize,
+    });
+    componentLayer.add(component);
+}
 
 function addComponentListeners() {
     stage.on("mousemove", highlighter);
+    highlight.on('mousedown touchstart', addComponent);
 }
 
 components.forEach(component => {
@@ -58,6 +72,10 @@ components.forEach(component => {
         stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
         // starts component functionality
         addComponentListeners();
+
+        // gets image from component selected
+        imgObj = this.firstElementChild;
+
         container.removeEventListener("mouseleave", containerFunc);
         containerFunc = noHighlight;
         container.addEventListener("mouseleave", containerFunc);
