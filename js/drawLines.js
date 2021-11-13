@@ -22,7 +22,7 @@ function startDraw(e) {
     lastLine = new Konva.Line({
         stroke: '#df4b26',
         // make stroke width bigger for eraser so that no streaks are left behind
-        strokeWidth: mode === "pencil" ? 5 : 6,
+        strokeWidth: mode === "pencil" ? lineSize : lineSize + 1,
         globalCompositeOperation:
             mode === 'pencil' ? 'source-over' : 'destination-out',
         // round cap for smoother lines
@@ -73,8 +73,8 @@ pencil.addEventListener("click", function() {
 
     mode = this.dataset.value;
     
-    // removes previous listeners
-    stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
+    // removes previous listeners: lives in script.js
+    removeListeners();
     // starts drawing functionality
     addLineListeners();
     // listens for mouse leaving container
@@ -90,8 +90,8 @@ eraser.addEventListener("click", function() {
 
     mode = this.dataset.value;
 
-    // removes previous listeners
-    stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
+    // removes previous listeners: lives in script.js
+    removeListeners();
     // starts drawing functionality
     addLineListeners();
     // listens for mouse leaving container

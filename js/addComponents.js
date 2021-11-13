@@ -20,9 +20,6 @@ const highlight = new Konva.Rect({
     height: blockSnapSize,
     fill: '#FF7B17',
     opacity: 0.6,
-    stroke: '#CF6412',
-    strokeWidth: 3,
-    dash: [20, 2]
 });
 componentLayer.add(highlight);
 noHighlight();
@@ -47,13 +44,19 @@ function addComponent() {
     let y = highlight.y();
 
     let component = new Konva.Image({
-        x: x,
-        y: y,
+        x: x + lineSize / 2,
+        y: y + lineSize / 2,
         image: imgObj,
-        width: blockSnapSize,
-        height: blockSnapSize,
+        width: blockSnapSize - lineSize,
+        height: blockSnapSize - lineSize,
+        fill: "white",
     });
     componentLayer.add(component);
+
+    // removes component
+    component.on("dblclick", function() {
+        this.destroy();
+    });
 }
 
 function addComponentListeners() {
@@ -68,8 +71,8 @@ components.forEach(component => {
         this.classList.add("selected");
         prevSelected = this;
 
-        // removes previous listeners
-        stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
+        // removes previous listeners: lives in script.js
+        removeListeners();
         // starts component functionality
         addComponentListeners();
 

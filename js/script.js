@@ -35,3 +35,9 @@ const stage = new Konva.Stage({
 
 //  keeps track of handlers added to container
 let containerFunc;
+
+// removes all konva listeners
+function removeListeners() {
+    stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
+    highlight.off('mousedown touchstart', addComponent);
+}
