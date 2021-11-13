@@ -9,6 +9,8 @@ function togglePopup() {
     popup.classList.toggle("displayInput");
     setTimeout(() => {
         popup.classList.toggle("opacityInput");
+        // focuses text input
+        textInput.focus();
     }, 10);
 }
 
@@ -26,11 +28,13 @@ function getText() {
 }
 
 const add = document.querySelector("#addText");
+const textInput = document.querySelector("#textInput");
 // gets user text and adds it to container
 add.addEventListener("click", function() {
     // gets user text
     const parent = this.parentElement;
-    const text = parent.firstElementChild.value;
+    const text = textInput.value;
+    textInput.value = "";
 
     const textNode = new Konva.Text({
         text: text,

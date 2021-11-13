@@ -38,18 +38,22 @@ body {
   opacity: 1;
 }
 #textInput {
-  outline: none;
   border: none;
   padding: 6px;
   border-radius: 0.2rem;
 }
+#textInput:focus {
+  outline: 2px solid rgb(248, 149, 149);
+}
 #addText {
   background-color: lightgreen;
-  outline: none;
   border: none;
   padding: 6px;
   margin-left: 3px;
   border-radius: 0.2rem;
+}
+#addText:focus {
+  outline: 2px solid rgb(248, 149, 149);
 }
 #addText:hover {
   background-color: rgb(163, 240, 163);
@@ -71,6 +75,7 @@ body {
     padding: 8px;
 }
 #title {
+  font-weight: bolder;
   margin: 1.5rem 0;
   text-align: center;
 }
