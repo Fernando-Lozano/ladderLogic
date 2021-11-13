@@ -20,7 +20,7 @@ function startDraw(e) {
     pos.x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
     pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
     lastLine = new Konva.Line({
-        stroke: '#df4b26',
+        stroke: 'black',
         // make stroke width bigger for eraser so that no streaks are left behind
         strokeWidth: mode === "pencil" ? lineSize : lineSize + 1,
         globalCompositeOperation:

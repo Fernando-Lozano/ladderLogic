@@ -1,42 +1,62 @@
 /*-------------------------- draw text --------------------------*/
 
-// maybe just add them to component layer ?
+// groups components to "z-index" relative to component group accordingly
+const textGroup = new Konva.Group();
+componentLayer.add(textGroup);
 
-// displays text input
-function showPopup() {
-    popup.classList.toggle("showInput");
+// displays/hides text input
+function togglePopup() {
+    popup.classList.toggle("displayInput");
+    setTimeout(() => {
+        popup.classList.toggle("opacityInput");
+    }, 10);
+}
+
+// tracks mouse positon
+let pos = {
+    x: 0,
+    y: 0
+};
+function getText() {
+    // get position of mouse on click
+    pos.x = highlight.x();
+    pos.y = highlight.y();
+
+    togglePopup();
 }
 
 const add = document.querySelector("#addText");
 // gets user text and adds it to container
 add.addEventListener("click", function() {
-    // get user text
+    // gets user text
+    const parent = this.parentElement;
+    const text = parent.firstElementChild.value;
 
-    // add text to container
-    let x = highlight.x();
-    let y = highlight.y();
-
-    let component = new Konva.Image({
-        x: x + lineSize / 2,
-        y: y + lineSize / 2,
-        image: imgObj,
-        width: blockSnapSize - lineSize,
-        height: blockSnapSize - lineSize,
-        fill: "white",
+    const textNode = new Konva.Text({
+        text: text,
+        x: pos.x + blockSnapSize / 2,
+        y: pos.y,
+        fontSize: 12,
+        draggable: true
     });
-    componentLayer.add(component);
+    // centers the text
+    textNode.offsetX(textNode.width() / 2);
+    // offsets text above square
+    textNode.offsetY(5 + textNode.height() / 2);
+    textGroup.add(textNode);
+
+    textNode.moveToTop();
 
     // removes text
-    component.on("dblclick", function () {
+    textNode.on("dblclick", function () {
         this.destroy();
     });
-
-
+    togglePopup();
 });
 
 function addTextListeners() {
     stage.on("mousemove", highlighter);
-    highlight.on('mousedown touchstart', showPopup);
+    highlight.on('mousedown touchstart', getText);
 }
 
 const textBtn = document.querySelector("#text");
@@ -52,6 +72,9 @@ textBtn.addEventListener("click", function() {
         removeListeners();
         // starts component functionality
         addTextListeners();
+
+        // moves highlighter to top
+        highlight.moveToTop();
 
         container.removeEventListener("mouseleave", containerFunc);
         containerFunc = noHighlight;

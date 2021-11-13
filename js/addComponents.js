@@ -1,8 +1,13 @@
 /*-------------------------- draw components --------------------------*/
 
+// layer that will contain components and text
 const componentLayer = new Konva.Layer();
 
 stage.add(componentLayer);
+
+// groups components to "z-index" relative to text group accordingly
+const componentGroup = new Konva.Group();
+componentLayer.add(componentGroup);
 
 const components = document.querySelectorAll(".component");
 
@@ -51,7 +56,7 @@ function addComponent() {
         height: blockSnapSize - lineSize,
         fill: "white",
     });
-    componentLayer.add(component);
+    componentGroup.add(component);
 
     // removes component
     component.on("dblclick", function() {
@@ -75,6 +80,9 @@ components.forEach(component => {
         removeListeners();
         // starts component functionality
         addComponentListeners();
+
+        // moves highlighter to bottom
+        highlight.moveToBottom();
 
         // gets image from component selected
         imgObj = this.firstElementChild;

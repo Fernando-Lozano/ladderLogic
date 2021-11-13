@@ -18,23 +18,20 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
-- listen for click, on clickadd images:
-    - seperate folder
-    - remove on click if eraser is selected(?)
-- add text:
-    - seperate folder
-    - removable with double click
+- group pencil and eraser
+- clear text input and add focus
+- size grid, components, linewidth, and text until satisfied
 
 ## Todo on main:
-- components
-- text
 - save and load states
 - style component highlighter properly
+- add print js, validators, and confirms for main functions
+- testing
+- landing page with video
+- deploy on github pages
 
 ## Learn:
-- add and remove images to grid and make sure this layer sits above grid lines and delete option
-- add and make text moveable and delete option
-- double clicks to delete(?)
+- complete
 
 ## Ideas:
 - keep all namespaces unique across all js files
@@ -57,3 +54,5 @@ This web app will provide a quick and easy way to draw and print small electrici
 - fixed mouse off container issue
 - added hover effect for adding components
 - fixed bug
+- finished adding components
+- finished adding text

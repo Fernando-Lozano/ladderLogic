@@ -18,11 +18,9 @@ const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", () => {
     drawLayer.destroyChildren();
-    let nodes = componentLayer.find("Image");
-    nodes.forEach(node => {
-        node.destroy();
-    });
-    // clear other layers here
+    toDelete = componentGroup.getChildren();
+    componentGroup.destroyChildren();
+    textGroup.destroyChildren();
 });
 
 // keeps track of which item was previously selected
@@ -42,5 +40,5 @@ let containerFunc;
 // removes all konva listeners
 function removeListeners() {
     stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
-    highlight.off('mousedown touchstart', addComponent);
+    highlight.off('mousedown touchstart');
 }
