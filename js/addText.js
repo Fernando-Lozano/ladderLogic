@@ -37,12 +37,16 @@ function addComponentListeners() {
 }
 
 const textBtn = document.querySelector("#text");
+const popup = document.querySelector(".inputDiv");
+
 
 textBtn.addEventListener("click", function() {
         // keeps track of which button is selected
         prevSelected.classList.remove("selected");
         this.classList.add("selected");
         prevSelected = this;
+
+        popup.classList.toggle("showInput");
 
         // removes previous listeners: lives in script.js
         removeListeners();

@@ -22,12 +22,18 @@ body {
   width: 260px;
   height: 80px;
   position: fixed;
-  top: calc(50% - 40px);
+  top: calc(25% - 40px);
   left: calc(50% - 130px);
   z-index: 1;
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+.showInput {
+  display: flex;
+  opacity: 1;
 }
 #textInput {
   outline: none;
