@@ -18,6 +18,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
+- safari not printing the second time check this: https://stackoverflow.com/questions/48524702/safari-not-allowing-a-second-window-print
 - change width and height back to before for page print
 - keep "print" button but add other changes from other branch to main
 - add exit button to remove popup text
