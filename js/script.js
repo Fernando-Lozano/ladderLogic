@@ -7,8 +7,9 @@ printBtn.addEventListener("click", () => {
     // removes grid lines for printing purposes
     gridLayer.hide();
 
-    printJS({ printable: stage.toDataURL({ pixelRatio: dpi }), type: "image" });
-
+    let doc = new jsPDF({ format: "letter" });
+    doc.addImage(stage.toDataURL({ pixelRatio: dpi }), "PNG", 0, 0, 215.9, 279.4);
+    doc.save("image.pdf");
     // adds grid lines back in
     gridLayer.show();
 });
