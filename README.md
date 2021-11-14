@@ -1,5 +1,5 @@
 # About
-This web app will provide a quick and easy way to draw and print small electricical ladder diagrams. I might add a landing page with a simple video demonstrating the funcionality.
+This web app will provide a quick and easy way to draw and print small electricical ladder diagrams. I might add a landing page with a simple video demonstrating the functionality.
 
 ## Functionality:
 - select components and click the area they should go (should snap into place)
@@ -13,9 +13,6 @@ This web app will provide a quick and easy way to draw and print small electrici
 ## Technologies:
 - Konva.js
 - flash.js (for save, clear, and load)
-- print.js
-- bootstrap (possibly)
-- font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
 - shorten svg stop and start button bars
@@ -27,8 +24,11 @@ This web app will provide a quick and easy way to draw and print small electrici
 - style component highlighter properly
 - pick desired color design
 - add confirms for main functions
+- once all desired components are added, group them in tool bar
 - testing
 - landing page with video
+- combine js into one large file
+- compress js for performance
 
 ## Learn:
 - complete
