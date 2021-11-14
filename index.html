@@ -13,10 +13,13 @@
 <body>
     <!-- ----------------------- add text popup ---------------------- -->
     <div class="inputDiv">
-        <form class="textContainer" id="addText">
-            <input type="text" id="textInput" pattern="^[\w\d]+.*$" title="Must not be empty" required>
-            <button type="submit" id="submit">Add</button>
-        </form>
+        <div class="innerInput">
+            <form id="addText">
+                <input type="text" id="textInput" pattern="^[\w\d]+.*$" title="Must not be empty" required>
+                <button type="submit" id="submit">Add</button>
+            </form>
+            <span id="closeText">&times;</span>
+        </div>
     </div>
 
     <div class="main">

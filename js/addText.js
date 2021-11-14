@@ -33,7 +33,6 @@ const textInput = document.querySelector("#textInput");
 add.addEventListener("submit", function(e) {
     e.preventDefault();
     // gets user text
-    const parent = this.parentElement;
     const text = textInput.value;
     textInput.value = "";
 
@@ -50,7 +49,8 @@ add.addEventListener("submit", function(e) {
     textNode.offsetY(5 + textNode.height() / 2);
     textGroup.add(textNode);
 
-    textNode.moveToTop();
+    // not sure why this is here?
+    // textNode.moveToTop();
 
     // removes text
     textNode.on("dblclick", function () {
@@ -78,8 +78,8 @@ textBtn.addEventListener("click", function() {
         // starts component functionality
         addTextListeners();
 
-        // moves highlighter to top
-        highlight.moveToTop();
+        // moves highlighter one below the text so that text is clickable
+        highlight.zIndex(1);
 
         container.removeEventListener("mouseleave", containerFunc);
         containerFunc = noHighlight;

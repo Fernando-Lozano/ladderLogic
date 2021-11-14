@@ -1,15 +1,9 @@
-/*-------------------------- draw components --------------------------*/
+/*-------------------------- draw square highlighter --------------------------*/
 
 // layer that will contain components and text
 const componentLayer = new Konva.Layer();
 
 stage.add(componentLayer);
-
-// groups components to "z-index" relative to text group accordingly
-const componentGroup = new Konva.Group();
-componentLayer.add(componentGroup);
-
-const components = document.querySelectorAll(".component");
 
 // hides highlighter if mouse leaves container
 function noHighlight() {
@@ -42,6 +36,14 @@ function highlighter() {
         y: Math.floor(pos.y / blockSnapSize) * blockSnapSize - blockSnapSize / 2
     });
 }
+
+/*-------------------------- draw components --------------------------*/
+
+// groups components to "z-index" relative to text group accordingly
+const componentGroup = new Konva.Group();
+componentLayer.add(componentGroup);
+
+const components = document.querySelectorAll(".component");
 
 let imgObj;
 function addComponent() {
@@ -82,7 +84,7 @@ components.forEach(component => {
         addComponentListeners();
 
         // moves highlighter to bottom
-        highlight.moveToBottom();
+        highlight.zIndex(0);
 
         // gets image from component selected
         imgObj = this.firstElementChild;

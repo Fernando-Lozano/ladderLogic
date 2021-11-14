@@ -14,11 +14,7 @@ body {
 /*-------------------------- add text popup --------------------------*/
 .inputDiv {
   display: none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   background-color: lightblue;
-  padding: 8px;
   width: 260px;
   height: 80px;
   position: fixed;
@@ -32,10 +28,19 @@ body {
   transition: opacity 0.2s ease-in;
 }
 .displayInput {
-  display: flex;
+  display: block;
 }
 .opacityInput {
   opacity: 1;
+}
+.innerInput {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 #textInput {
   border: none;
@@ -57,6 +62,22 @@ body {
 }
 #submit:hover {
   background-color: rgb(163, 240, 163);
+}
+#closeText {
+  line-height: 0.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 0.2s ease-in;
+}
+#closeText:hover,
+#closeText:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*-------------------------- main --------------------------*/
@@ -109,11 +130,8 @@ body {
 }
 .main-page {
   width: 215.9mm;
-  /* height: 279.4mm;
-  min-height: 279.4mm; */
-  /* lowered the height because of printing issues in Safari browser */
-  min-height: 256mm;
-  height: 256mm;
+  height: 279.4mm;
+  min-height: 279.4mm;
   margin: 10mm auto;
   box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 }
