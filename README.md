@@ -19,12 +19,13 @@ This web app will provide a quick and easy way to draw and print small electrici
 
 ## Tasks:
 - shorten svg stop and start button bars
-- group pencil and eraser
+- add more components
 - size grid, components, linewidth, and text until satisfied
 
 ## Todo on main:
 - save and load states
 - style component highlighter properly
+- pick desired color design
 - add confirms for main functions
 - testing
 - landing page with video
