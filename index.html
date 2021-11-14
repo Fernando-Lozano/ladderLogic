@@ -14,7 +14,7 @@
     <!-- ----------------------- add text popup ---------------------- -->
     <div class="inputDiv">
         <form class="textContainer" id="addText">
-            <input type="text" id="textInput" pattern="\w" title="Must not be empty" required>
+            <input type="text" id="textInput" pattern="^[\w\d]+.*$" title="Must not be empty" required>
             <button type="submit" id="submit">Add</button>
         </form>
     </div>
@@ -26,7 +26,7 @@
             <div class="states tools">
                 <div class="item" id="print">
                     <img src="./images/printer.svg" alt="printer icon" height="50">
-                    <p>Print</p>
+                    <p>Download</p>
                 </div>
                 <div class="item">
                     <img src="./images/save.svg" alt="save icon" height="50">
@@ -86,8 +86,6 @@
         crossorigin="anonymous"></script>
     <!-- Konva.js -->
     <script src="./js/konva.min.js"></script>
-    <!-- used to print the canvas -->
-    <script src="./js/print-js/dist/print.js"></script>
     <!-- variables for the following scripts -->
     <script>
         const container = document.querySelector("#container");

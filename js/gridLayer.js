@@ -1,15 +1,16 @@
-/*
-    use gridLayer.hide(); to hide grid lines
-*/
+/*-------------------------- add grid layer --------------------------*/
 
-// ------- adds grid lines as a guide -------
 const gridLayer = new Konva.Layer({
     listening: false
 });
+stage.add(gridLayer);
+
+const gridGroup = new Konva.Group();
+gridLayer.add(gridGroup);
 
 // x lines
 for (let i = 0; i <= width / padding; i++) {
-    gridLayer.add(new Konva.Line({
+    gridGroup.add(new Konva.Line({
         points: [Math.round(i * padding), 0, Math.round(i * padding), height],
         stroke: '#ddd',
         strokeWidth: 1,
@@ -17,11 +18,24 @@ for (let i = 0; i <= width / padding; i++) {
 }
 //  y lines
 for (let j = 0; j < height / padding; j++) {
-    gridLayer.add(new Konva.Line({
+    gridGroup.add(new Konva.Line({
         points: [0, Math.round(j * padding), width, Math.round(j * padding)],
         stroke: '#ddd',
         strokeWidth: 0.5,
     }));
 }
 
-stage.add(gridLayer);
+// used to add a white background for downloading image
+// used only to add white background for image download
+const background = new Konva.Rect({
+    x: 0,
+    y: 0,
+    width: stage.width(),
+    height: stage.height(),
+    fill: "white",
+    // remove background from hit graph for better perf
+    // because we don't need any events on the background
+    listening: false,
+});
+background.hide();
+gridLayer.add(background)
