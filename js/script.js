@@ -1,17 +1,32 @@
 const dpi = window.devicePixelRatio;
 
-// print workspace
+// download workspace
 const printBtn = document.querySelector("#print");
+
+// function from https://stackoverflow.com/a/15832662/512042
+function downloadURI(uri, name) {
+    var link = document.createElement('a');
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+}
 
 printBtn.addEventListener("click", () => {
     // removes grid lines for printing purposes
-    gridLayer.hide();
+    gridGroup.hide();
+    // adds white background
+    background.visible(true);
 
-    let doc = new jsPDF({ format: "letter" });
-    doc.addImage(stage.toDataURL({ pixelRatio: dpi }), "PNG", 0, 0, 215.9, 279.4);
-    doc.save("image.pdf");
-    // adds grid lines back in
-    gridLayer.show();
+    const dataURL = stage.toDataURL({ pixelRatio: dpi });
+    downloadURI(dataURL, 'ladderLogic.png');
+
+    // adds grid lines
+    gridGroup.show();
+    // removes white background
+    background.hide();
 });
 
 // clear workspace

@@ -18,6 +18,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - font awesome (remove once no longer using) or localize icons
 
 ## Tasks:
+- note: working in branch
 - add exit button to remove popup text
 - shorten svg stop and start button bars
 - group pencil and eraser
