@@ -85,3 +85,9 @@ textBtn.addEventListener("click", function() {
         containerFunc = noHighlight;
         container.addEventListener("mouseleave", containerFunc);
 });
+
+// closes text popup
+const closeBtn = document.querySelector("#closeText");
+closeBtn.addEventListener("click", () => {
+    togglePopup();
+});
