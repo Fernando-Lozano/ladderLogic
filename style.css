@@ -109,8 +109,11 @@ body {
 }
 .main-page {
   width: 215.9mm;
-  height: 279.4mm;
-  min-height: 279.4mm;
+  /* height: 279.4mm;
+  min-height: 279.4mm; */
+  /* lowered the height because of printing issues in Safari browser */
+  min-height: 256mm;
+  height: 256mm;
   margin: 10mm auto;
   box-shadow: 0 0 1rem rgba(0,0,0,0.5);
 }

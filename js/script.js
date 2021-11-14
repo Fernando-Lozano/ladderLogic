@@ -7,7 +7,11 @@ printBtn.addEventListener("click", () => {
     // removes grid lines for printing purposes
     gridLayer.hide();
 
-    printJS({ printable: stage.toDataURL({ pixelRatio: dpi }), type: "image" });
+    printJS({
+        printable: stage.toDataURL({ pixelRatio: dpi }),
+        type: "image",
+        maxWidth: stage.width()
+    });
 
     // adds grid lines back in
     gridLayer.show();
