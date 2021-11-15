@@ -15,6 +15,7 @@ This web app will provide a quick and easy way to draw and print small electrici
 - flash.js (for save, clear, and load)
 
 ## Tasks:
+- maybe try lowering highlight before components and just listen for component click to add text
 - size grid, components, linewidth, and text until satisfied
 
 ## Todo on main:
