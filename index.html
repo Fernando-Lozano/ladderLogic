@@ -23,67 +23,78 @@
         <!-- ----------------------- toolbar ---------------------- -->
         <div class="toolbar">
             <h1 id="title">Ladder Logic</h1>
-            <div class="states tools">
-                <div class="item" id="print">
-                    <img src="./images/printer.svg" alt="printer icon" height="50">
+            <div class="states toolbarItems">
+                <div class="item tool" id="print">
+                    <img src="./images/printer.svg" alt="printer icon" height="40">
                     <p>Download</p>
                 </div>
-                <div class="item">
-                    <img src="./images/save.svg" alt="save icon" height="50">
+                <div class="item tool">
+                    <img src="./images/save.svg" alt="save icon" height="40">
                     <p>Save</p>
                 </div>
-                <div class="item">
-                    <img src="./images/load.svg" alt="load icon" height="50">
+                <div class="item tool">
+                    <img src="./images/load.svg" alt="load icon" height="40">
                     <p>Load</p>
                 </div>
-                <div class="item" id="clear">
-                    <img src="./images/clear.svg" alt="clear icon" height="50">
+                <div class="item tool" id="clear">
+                    <img src="./images/clear.svg" alt="clear icon" height="40">
                     <p>Clear</p>
                 </div>
 
             </div>
             <h3>Draw</h3>
-            <div class="tools">
+            <div class="toolbarItems">
                 <div class="drawTools">
-                    <div class="item" data-value="pencil" id="pencil">
-                        <img src="./images/pencil.svg" alt="pencil icon" height="50">
+                    <div class="item tool" data-value="pencil" id="pencil">
+                        <img src="./images/pencil.svg" alt="pencil icon" height="40">
                         <p>Pencil</p>
                     </div>
-                    <div class="item" data-value="eraser" id="eraser">
-                        <img src="./images/eraser.svg" alt="eraser icon" height="50">
+                    <div class="item tool" data-value="eraser" id="eraser">
+                        <img src="./images/eraser.svg" alt="eraser icon" height="40">
                         <p>Eraser</p>
                     </div>
                 </div>
-                <div class="item" id="text">
-                    <img src="./images/text.svg" alt="text icon" height="50">
+                <div class="item tool" id="text">
+                    <img src="./images/text.svg" alt="text icon" height="40">
                     <p>Text</p>
                 </div>
             </div>
             <h3>Components</h3>              
-            <div class="components tools">
-                <div class="item component">
-                    <img src="./images/components/stop.png" alt="stop button" height="50">
-                    <p>button</p>
-                </div>
-                <div class="item component">
-                    <img src="./images/components/start.png" alt="start button" height="50">
-                    <p>button</p>
-                </div>
-                <div class="item component">
-                    <img src="./images/components/coil.png" alt="coil" height="50">
-                    <p>Coil</p>
-                </div>
-                <div class="item component">
-                    <img src="./images/components/NOcontact.png" alt="NO contact" height="50">
-                    <p>contact</p>
-                </div>
-                <div class="item component">
-                    <img src="./images/components/NCcontact.png" alt="NC contact" height="50">
-                    <p>contact</p>
-                </div>
-                <div class="item component">
-                    <img src="./images/components/toggleSwitch.png" alt="toggle switch" height="50">
-                    <p>toggle</p>
+            <div class="componentParent">
+                <div class="components">
+                    <h4>Pushbuttons</h4>
+                    <section>
+                        <div class="item component">
+                            <img src="./images/components/stop.png" alt="stop button" height="36">
+                            <p>stop</p>
+                        </div>
+                        <div class="item component">
+                            <img src="./images/components/start.png" alt="start button" height="36">
+                            <p>start</p>
+                        </div>
+                    </section>
+                    <h4>Coils and Contacts</h4>
+                    <section>
+                        <div class="item component">
+                            <img src="./images/components/coil.png" alt="coil" height="36">
+                            <p>Coil</p>
+                        </div>
+                        <div class="item component">
+                            <img src="./images/components/NOcontact.png" alt="NO contact" height="36">
+                            <p>NO</p>
+                        </div>
+                        <div class="item component">
+                            <img src="./images/components/NCcontact.png" alt="NC contact" height="36">
+                            <p>NC</p>
+                        </div>
+                    </section>
+                    <h4>Switches</h4>
+                    <section>
+                        <div class="item component">
+                            <img src="./images/components/toggleSwitch.png" alt="toggle switch" height="36">
+                            <p>toggle</p>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

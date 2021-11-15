@@ -17,7 +17,7 @@ const highlight = new Konva.Rect({
     y: 0,
     width: blockSnapSize,
     height: blockSnapSize,
-    fill: '#FF7B17',
+    fill: '#c6e6f1',
     opacity: 0.6,
 });
 componentLayer.add(highlight);

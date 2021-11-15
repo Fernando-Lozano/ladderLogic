@@ -15,8 +15,6 @@ This web app will provide a quick and easy way to draw and print small electrici
 - flash.js (for save, clear, and load)
 
 ## Tasks:
-- shorten svg stop and start button bars
-- add more components
 - size grid, components, linewidth, and text until satisfied
 
 ## Todo on main:
