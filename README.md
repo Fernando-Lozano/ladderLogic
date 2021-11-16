@@ -16,7 +16,6 @@ This web app will provide a quick and easy way to draw and print small electrica
 - flash.js (for save, clear, and load)
 
 ## Tasks:
-- change print button to download icon
 - add remainder of components
 - save and load states
 - add a little bit of responsiveness to preserve container
@@ -29,6 +28,7 @@ This web app will provide a quick and easy way to draw and print small electrica
 - compress js for performance
 
 ## Ideas:
+- only draw if mouse enters another grid intersection (should boost perf as well)
 - keep main functions on top and listeners in bottom
 - group relevant code together
 

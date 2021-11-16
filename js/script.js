@@ -37,9 +37,24 @@ downloadBtn.addEventListener("click", () => {
 
 /*-------------------------- save workspace --------------------------*/
 // todo
+/*
+    get all necessary info to store items:
+        store lines might be tricky
+        store components in array
+        store text in array
+    store in local storage
+    check to see how big the arrays end up being
+*/
 
 /*-------------------------- load workspace --------------------------*/
 // todo
+/*
+    if stored workspace exists:
+        clear container
+        loop over stored items and add them to stage
+        check to see how long a full container takes: if lots, add load icon
+    else do nothing
+*/
 
 /*-------------------------- clear workspace --------------------------*/
 
