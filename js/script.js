@@ -34,7 +34,6 @@ const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", () => {
     drawLayer.destroyChildren();
-    toDelete = componentGroup.getChildren();
     componentGroup.destroyChildren();
     textGroup.destroyChildren();
 });

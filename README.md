@@ -1,39 +1,35 @@
 # About
-This web app will provide a quick and easy way to draw and print small electricical ladder diagrams. I might add a landing page with a simple video demonstrating the functionality.
+This web app will provide a quick and easy way to draw and print small electrical ladder diagrams. I might add a landing page with a simple video demonstrating the functionality.
 
 ## Functionality:
-- select components and click the area they should go (should snap into place)
-- if trash can is selected, clicking any components will delete them
-- if pencil is selected lines will be snapped into place wherever there is no component
-- lines can be removed with the eraser icon and use like the pencil
-- text icon selected will allow for writing in text
-- trash can selected should also allow for text to be deleted
-- Attempt with no drag-and-drop first
+- select pencil to draw lines
+- select eraser to erase lines
+- select text to add text. double click text to remove
+- select component to add component. double click component to remove (won't work if text tool is active)
+- select download for a PNG image
+- select clear to clear workspace
+- select save to save to local storage
+- select load to load from local storage
 
 ## Technologies:
 - Konva.js
 - flash.js (for save, clear, and load)
 
 ## Tasks:
-- maybe try lowering highlight before components and just listen for component click to add text
-- size grid, components, linewidth, and text until satisfied
+- add remainder of components
+- save and load states
+- add confirms
 
 ## Todo on main:
-- save and load states
-- style component highlighter properly
-- pick desired color design
-- add confirms for main functions
-- once all desired components are added, group them in tool bar
+- oranize all the js files so they contain a similar pattern
 - testing
 - landing page with video
 - combine js into one large file
 - compress js for performance
 
-## Learn:
-- complete
-
 ## Ideas:
 - keep main functions on top and listeners in bottom
+- group relevant code together
 
 ## Potential problems:
 - grid lines when drawn fast make diagonal lines
@@ -56,3 +52,4 @@ This web app will provide a quick and easy way to draw and print small electrici
 - finished adding text
 - added validator to text input
 - download as image instead of print (safari has issues with printing after cancelling)
+- worked on color and toolbar component layout

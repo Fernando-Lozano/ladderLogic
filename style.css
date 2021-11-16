@@ -4,10 +4,6 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-@page {
-  size: letter;
-  margin: 0;
-}
 body {
   position: relative;
 }
