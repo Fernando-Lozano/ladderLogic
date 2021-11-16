@@ -6,10 +6,18 @@ stage.add(drawLayer);
 let isPaint = false;
 let mode = "pencil";
 let line;
+let points;
 
 function startDraw(e) {
     isPaint = true;
+
+    const pos = stage.getPointerPosition();
+    // adjusts pointer position to nearest grid line
+    pos.x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
+    pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
+
     line = new Konva.Line({
+        points: [pos.x, pos.y],
         stroke: "black",
         // makes stroke width bigger for eraser so that no streaks are left behind
         strokeWidth: mode === "pencil" ? lineSize : lineSize + 1,
@@ -34,8 +42,13 @@ function drawing(e) {
     // adjusts pointer position to nearest grid line
     pos.x = Math.round(pos.x / blockSnapSize) * blockSnapSize;
     pos.y = Math.round(pos.y / blockSnapSize) * blockSnapSize;
-    const newPoints = line.points().concat([pos.x, pos.y]);
-    line.points(newPoints);
+
+    points = line.points();
+    // draw only if mouse has moved to another grid intersection
+    if (pos.x !== points[points.length-2] || pos.y !== points[points.length-1]) {
+        const newPoints = points.concat([pos.x, pos.y]);
+        line.points(newPoints);
+    }
 }
 
 function addLineListeners() {

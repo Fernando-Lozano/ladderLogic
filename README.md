@@ -22,6 +22,7 @@ This web app will provide a quick and easy way to draw and print small electrica
 - add confirms
 
 ## Todo on main:
+- add and destroy text lines for saving purposes
 - testing
 - combine js into one large file
 - landing page with video
@@ -33,6 +34,13 @@ This web app will provide a quick and easy way to draw and print small electrica
 - group relevant code together
 
 ## Potential problems:
+- storing data from drawing and erasing many lines could become unmanagable. Need
+    a way to destroy lines when erasing:
+        one possible solution:
+            when eraser is selected:
+                listen on each line
+                one hover turn red
+                on click destroy line
 - grid lines when drawn fast make diagonal lines
 
 ## Log:
