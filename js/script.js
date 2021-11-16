@@ -1,11 +1,17 @@
+const container = document.querySelector("#container");
+const width = container.clientWidth;
+const height = container.clientHeight;
+const blockSnapSize = Math.round(width / 16); // tweak this if needed (grid size)
+const lineSize = 2; // size of line drawings
 const dpi = window.devicePixelRatio;
 
-// download workspace
-const printBtn = document.querySelector("#print");
+//*-------------------------- download workspace --------------------------*/
+
+const downloadBtn = document.querySelector("#download");
 
 // function from https://stackoverflow.com/a/15832662/512042
 function downloadURI(uri, name) {
-    var link = document.createElement('a');
+    let link = document.createElement('a');
     link.download = name;
     link.href = uri;
     document.body.appendChild(link);
@@ -14,7 +20,7 @@ function downloadURI(uri, name) {
     delete link;
 }
 
-printBtn.addEventListener("click", () => {
+downloadBtn.addEventListener("click", () => {
     // removes grid lines for printing purposes
     gridGroup.hide();
     // adds white background
@@ -29,7 +35,14 @@ printBtn.addEventListener("click", () => {
     background.hide();
 });
 
-// clear workspace
+/*-------------------------- save workspace --------------------------*/
+// todo
+
+/*-------------------------- load workspace --------------------------*/
+// todo
+
+/*-------------------------- clear workspace --------------------------*/
+
 const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", () => {
@@ -38,9 +51,7 @@ clearBtn.addEventListener("click", () => {
     textGroup.destroyChildren();
 });
 
-// keeps track of which item was previously selected
-let prevSelected = document.querySelector("#pencil");
-prevSelected.classList.toggle("selected");
+/*-------------------------- general section --------------------------*/
 
 // A stage is used to contain multiple layers
 const stage = new Konva.Stage({
@@ -49,11 +60,15 @@ const stage = new Konva.Stage({
     height: height,
 });
 
-//  keeps track of handlers added to container
+// keeps track of which item was previously selected
+let prevSelected = document.querySelector("#pencil");
+prevSelected.classList.toggle("selected");
+
+//  keeps track of handler added to container
 let containerFunc;
 
-// removes all konva listeners
+// removes certain konva listeners
 function removeListeners() {
-    stage.off("mousedown mouseup touchstart touchend mousemove touchmove");
-    highlight.off('mousedown touchstart');
+    stage.off("mousedown mouseup mousemove");
+    highlight.off("mousedown");
 }

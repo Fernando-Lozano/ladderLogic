@@ -24,8 +24,8 @@
         <div class="toolbar">
             <h1 id="title">Ladder Logic</h1>
             <div class="states toolbarItems">
-                <div class="item tool" id="print">
-                    <img src="./images/printer.svg" alt="printer icon" height="40">
+                <div class="item tool" id="download">
+                    <img src="./images/printer.svg" alt="download icon" height="40">
                     <p>Download</p>
                 </div>
                 <div class="item tool">
@@ -40,7 +40,6 @@
                     <img src="./images/clear.svg" alt="clear icon" height="40">
                     <p>Clear</p>
                 </div>
-
             </div>
             <h3>Draw</h3>
             <div class="toolbarItems">
@@ -98,11 +97,9 @@
                 </div>
             </div>
         </div>
-        <!-- ----------------------- workspace ---------------------- -->
-        <div class="work">
-            <div class="main-page">
-                <div class="draw" id="container"></div>
-            </div>
+        <!-- ----------------------- work area ---------------------- -->
+        <div class="workArea">
+            <div class="workSpace" id="container"></div>
         </div>
     </div>
     <!-- bootstrap -->
@@ -111,15 +108,7 @@
         crossorigin="anonymous"></script>
     <!-- Konva.js -->
     <script src="./js/konva.min.js"></script>
-    <!-- variables for the following scripts -->
-    <script>
-        const container = document.querySelector("#container");
-        const width = container.clientWidth;
-        const height = container.clientHeight;
-        const blockSnapSize = Math.round(width / 16); // tweak this to suite your needsl
-        const padding = blockSnapSize;
-        const lineSize = 2; // size of line drawings
-    </script>
+    
     <script src="./js/script.js"></script>
     <script src="./js/gridLayer.js"></script>
     <script src="./js/drawLines.js"></script>

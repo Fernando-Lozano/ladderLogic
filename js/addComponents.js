@@ -2,13 +2,8 @@
 
 // layer that will contain components and text
 const componentLayer = new Konva.Layer();
-
 stage.add(componentLayer);
 
-// hides highlighter if mouse leaves container
-function noHighlight() {
-    highlight.hide();
-};
 
 // hover effect from: https://medium.com/@pierrebleroux/snap-to-grid-with-konvajs-c41eae97c13f
 // used to highlight area to place components
@@ -21,6 +16,11 @@ const highlight = new Konva.Rect({
     opacity: 0.8,
 });
 componentLayer.add(highlight);
+
+// hides highlighter if mouse leaves container
+function noHighlight() {
+    highlight.hide();
+};
 noHighlight();
 
 function highlighter() {
@@ -39,17 +39,15 @@ function highlighter() {
 
 /*-------------------------- draw components --------------------------*/
 
-// groups components to "z-index" relative to text group accordingly
+// groups components so that its' z-index can be changed relative to text
 const componentGroup = new Konva.Group();
 componentLayer.add(componentGroup);
-
-const components = document.querySelectorAll(".component");
 
 let imgObj;
 function addComponent() {
     let x = highlight.x();
     let y = highlight.y();
-
+    
     let component = new Konva.Image({
         x: x + lineSize / 2,
         y: y + lineSize / 2,
@@ -59,7 +57,7 @@ function addComponent() {
         fill: "white",
     });
     componentGroup.add(component);
-
+    
     // removes component
     component.on("dblclick", function() {
         this.destroy();
@@ -68,9 +66,10 @@ function addComponent() {
 
 function addComponentListeners() {
     stage.on("mousemove", highlighter);
-    highlight.on('mousedown touchstart', addComponent);
+    highlight.on("mousedown", addComponent);
 }
 
+const components = document.querySelectorAll(".component");
 components.forEach(component => {
     component.addEventListener("click", function() {
         // keeps track of which button is selected
@@ -78,17 +77,17 @@ components.forEach(component => {
         this.classList.add("selected");
         prevSelected = this;
 
-        // removes previous listeners: lives in script.js
         removeListeners();
         // starts component functionality
         addComponentListeners();
 
-        // moves highlighter to bottom
+        // moves highlighter below components so that components can be clicked
         highlight.zIndex(0);
 
         // gets image from component selected
         imgObj = this.firstElementChild;
 
+        // stops highlighting if the mouse leaves the container
         container.removeEventListener("mouseleave", containerFunc);
         containerFunc = noHighlight;
         container.addEventListener("mouseleave", containerFunc);

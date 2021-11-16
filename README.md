@@ -16,15 +16,16 @@ This web app will provide a quick and easy way to draw and print small electrica
 - flash.js (for save, clear, and load)
 
 ## Tasks:
+- change print button to download icon
 - add remainder of components
 - save and load states
+- add a little bit of responsiveness to preserve container
 - add confirms
 
 ## Todo on main:
-- oranize all the js files so they contain a similar pattern
 - testing
-- landing page with video
 - combine js into one large file
+- landing page with video
 - compress js for performance
 
 ## Ideas:
@@ -53,3 +54,9 @@ This web app will provide a quick and easy way to draw and print small electrica
 - added validator to text input
 - download as image instead of print (safari has issues with printing after cancelling)
 - worked on color and toolbar component layout
+
+js order:
+    add layer
+    main code
+    addlistener
+or just reference drawLines

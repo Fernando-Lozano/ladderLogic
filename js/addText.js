@@ -1,6 +1,6 @@
 /*-------------------------- draw text --------------------------*/
 
-// groups components to "z-index" relative to component group accordingly
+// groups text so that its' z-index can be changed relative to components
 const textGroup = new Konva.Group();
 componentLayer.add(textGroup);
 
@@ -27,10 +27,11 @@ function getText() {
     togglePopup();
 }
 
-const add = document.querySelector("#addText");
+const addText = document.querySelector("#addText");
 const textInput = document.querySelector("#textInput");
+
 // gets user text and adds it to container
-add.addEventListener("submit", function(e) {
+addText.addEventListener("submit", function(e) {
     e.preventDefault();
     // gets user text
     const text = textInput.value;
@@ -49,9 +50,6 @@ add.addEventListener("submit", function(e) {
     textNode.offsetY(5 + textNode.height() / 2);
     textGroup.add(textNode);
 
-    // not sure why this is here?
-    // textNode.moveToTop();
-
     // removes text
     textNode.on("dblclick", function () {
         this.destroy();
@@ -61,7 +59,7 @@ add.addEventListener("submit", function(e) {
 
 function addTextListeners() {
     stage.on("mousemove", highlighter);
-    highlight.on('mousedown touchstart', getText);
+    highlight.on("mousedown", getText);
 }
 
 const textBtn = document.querySelector("#text");
@@ -73,12 +71,11 @@ textBtn.addEventListener("click", function() {
         this.classList.add("selected");
         prevSelected = this;
 
-        // removes previous listeners: lives in script.js
         removeListeners();
-        // starts component functionality
+        // starts text functionality
         addTextListeners();
 
-        // moves highlighter one below the text so that text is clickable
+        // moves highlighter above components so components can't be clicked
         highlight.zIndex(1);
 
         container.removeEventListener("mouseleave", containerFunc);
