@@ -39,7 +39,7 @@ downloadBtn.addEventListener("click", () => {
 // todo
 /*
     get all necessary info to store items:
-        store lines might be tricky
+        store lines in array
         store components in array
         store text in array
     store in local storage

@@ -13,13 +13,12 @@ This web app will provide a quick and easy way to draw and print small electrica
 
 ## Technologies:
 - Konva.js
-- flash.js (for save, clear, and load)
+- future plans: flash.js (for save, clear, and load)
 
 ## Tasks:
-- add remainder of components
-- save and load states
+- add selector switch and double pushbutton
 - add a little bit of responsiveness to preserve container
-- add confirms
+- add a help popup similar to add text popup
 
 ## Todo on main:
 - add and destroy text lines for saving purposes
@@ -29,18 +28,19 @@ This web app will provide a quick and easy way to draw and print small electrica
 - compress js for performance
 
 ## Ideas:
+- make response by flex row tool bar and work area. work area overflow auto
 - only draw if mouse enters another grid intersection (should boost perf as well)
 - keep main functions on top and listeners in bottom
 - group relevant code together
 
 ## Potential problems:
 - storing data from drawing and erasing many lines could become unmanagable. Need
-    a way to destroy lines when erasing:
-        one possible solution:
-            when eraser is selected:
-                listen on each line
-                one hover turn red
-                on click destroy line
+    a way to destroy lines when erasing. One possible solution:
+        check this out: https://konvajs.org/docs/events/Custom_Hit_Region.html
+        when eraser is selected:
+            listen on each line
+            on hover turn red
+            on click destroy line
 - grid lines when drawn fast make diagonal lines
 
 ## Log:
