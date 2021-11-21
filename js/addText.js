@@ -53,7 +53,16 @@ addText.addEventListener("submit", function(e) {
     // removes text
     textNode.on("dblclick", function () {
         this.destroy();
+        stage.container().style.cursor = 'default';
     });
+    // changes cursor on hover
+    textNode.on('mouseenter', function () {
+        stage.container().style.cursor = 'pointer';
+    });
+    textNode.on('mouseleave', function () {
+        stage.container().style.cursor = 'default';
+    });
+
     togglePopup();
 });
 

@@ -64,7 +64,15 @@ function addComponent() {
     
     // removes component
     component.on("dblclick", function() {
+        stage.container().style.cursor = 'default';
         this.destroy();
+    });
+    // changes cursor on hover
+    component.on('mouseenter', function () {
+        stage.container().style.cursor = 'pointer';
+    });
+    component.on('mouseleave', function () {
+        stage.container().style.cursor = 'default';
     });
 }
 

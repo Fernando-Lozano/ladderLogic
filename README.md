@@ -30,6 +30,7 @@ This web app will provide a quick and easy way to draw and print small electrica
 - add and destroy text lines for saving purposes (future)
 
 ## Potential problems:
+- if performance becomes an issue stop listening on components just to change the cursor
 - storing data from drawing and erasing many lines could become unmanagable. Need
     a way to destroy lines when erasing. One possible solution:
         check this out: https://konvajs.org/docs/events/Custom_Hit_Region.html
