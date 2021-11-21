@@ -140,6 +140,7 @@ h3 {
   border-radius: 0.5rem;
 }
 .item:hover {
+  cursor: pointer;
   background-color: rgb(255, 184, 184);
   
 }
