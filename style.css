@@ -136,7 +136,7 @@ h3 {
 }
 .item {
   padding: 4px;
-  margin: 4px;
+  margin: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -160,8 +160,18 @@ section {
   flex-wrap: wrap;
 }
 .component {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
   width: 70px;
   height: 70px;
+    border-radius: 0.5rem;
+}
+.component:hover {
+  background-color: rgb(255, 184, 184);
+  
 }
 .selected {
   /* important enough to override hover */

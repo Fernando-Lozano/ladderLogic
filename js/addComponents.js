@@ -44,16 +44,20 @@ const componentGroup = new Konva.Group();
 componentLayer.add(componentGroup);
 
 let imgObj;
+// sizes height based on type of component
+let scale;
 function addComponent() {
+    // gets scaled height of component
+    scale = Number(imgObj.dataset.scale);
     let x = highlight.x();
     let y = highlight.y();
     
     let component = new Konva.Image({
         x: x + lineSize / 2,
-        y: y + lineSize / 2,
+        y: y,
         image: imgObj,
         width: blockSnapSize - lineSize,
-        height: blockSnapSize - lineSize,
+        height: blockSnapSize * scale,
         fill: "white",
     });
     componentGroup.add(component);
