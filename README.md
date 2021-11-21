@@ -16,21 +16,18 @@ This web app will provide a quick and easy way to draw and print small electrica
 - future plans: flash.js (for save, clear, and load)
 
 ## Tasks:
-- add a little bit of responsiveness (not for mobile):
-    toolbar min width not fixed
-    toolbar scrollable
-    work area scrollable
-- add selector switch and double pushbutton
 - add a help popup similar to add text popup
+- change cursor on hovering over text and components
 
 ## Todo on main:
-- add and destroy text lines for saving purposes (future)
 - testing
 - combine js into one large file
 - landing page with video
 - compress js for performance
 
-## Ideas:
+## Future Plans:
+- add save and load functionality
+- add and destroy text lines for saving purposes (future)
 
 ## Potential problems:
 - storing data from drawing and erasing many lines could become unmanagable. Need
@@ -61,3 +58,4 @@ This web app will provide a quick and easy way to draw and print small electrica
 - added validator to text input
 - download as image instead of print (safari has issues with printing after cancelling)
 - worked on color and toolbar component layout
+- added double pushbutton and hand-of-auto component
