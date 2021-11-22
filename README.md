@@ -5,6 +5,7 @@ This web app will provide a quick and easy way to draw and print small electrica
 - Konva.js
 
 ## Tasks
+- add custom fonts
 - testing
 - combine js into one large file
 - add mit license
