@@ -97,6 +97,20 @@ body {
   height: 100vh;
   padding: 16px;
 }
+.helpDiv {
+  text-align: end;
+}
+.questionMark {
+  width: 30px;
+  height: 30px;
+  margin-bottom: -30px;
+  border-radius: 50%;
+  background-color: rgb(198, 230, 241);
+  transition: all 0.1s ease-in;
+}
+.questionMark:hover {
+  background-color: rgb(255, 184, 184);
+}
 #title {
   font-weight: bolder;
   margin: 1.5rem 0;
