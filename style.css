@@ -6,6 +6,7 @@
 }
 body {
   position: relative;
+  font-family: Arial, sans-serif;
 }
 /*-------------------------- add text popup --------------------------*/
 .inputDiv {
@@ -87,6 +88,7 @@ body {
 /*-------------------------- toolbar --------------------------*/
 .toolbar {
   display: flex;
+  position: relative;
   flex-direction: column;
   flex-wrap: nowrap;
   background-color: lightblue;
@@ -99,10 +101,20 @@ body {
 }
 .helpDiv {
   text-align: end;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
-.questionMark {
+.questionMarkAnchor {
+  display: inline-block;
+  margin: 8px;
   width: 30px;
   height: 30px;
+}
+.questionMark {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   background-color: rgb(198, 230, 241);
   transition: all 0.1s ease-in;
@@ -112,7 +124,7 @@ body {
 }
 #title {
   font-weight: bolder;
-  margin: -20px 0 1.5rem 0;
+  margin: 0 1.5rem 0;
   text-align: center;
 }
 h3 {

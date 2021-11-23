@@ -4,12 +4,24 @@ This web app will provide a quick and easy way to draw and print small electrica
 ## Technologies:
 - Konva.js
 
-## Tasks
-- add custom fonts
-- testing
-- combine js into one large file
-- add mit license
-- landing page with video
+## Tasks:
+- add video to landing page
+- match video instructions with help page instructions
+
+## VideoPlan:
+ - draw lines
+ - erase line mistake
+ - add components
+ - remove extra components
+ - add text
+ - remove text
+ - move text
+ - download PNG
+ - clear work area
+
+ - smooth transitions
+ - background music
+ - written guide at the bottom of the video
 
 ## Future Plans:
 - add save and load functionality
