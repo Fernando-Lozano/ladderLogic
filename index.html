@@ -4,91 +4,161 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Ladder Logic</title>
 </head>
-<style>
-    * {
-        margin: 0;
-        box-sizing: border-box;
-    }
-    body, html {
-        height: 100%;
-        font-family: Arial, sans-serif;
-    }
-    body {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-    .container {
-        background-color: lightblue;
-        width: 100vw;
-        height: 100%;
-        padding: 0 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center;
-        box-shadow: 0 0 1rem rgba(0,0,0,0.5);
-    }
-    h1 {
-        font-size: 3rem;
-        margin: 2rem 0;
-    }
-    .embed-youtube {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* - 16:9 aspect ratio (most common) */
-        /* padding-bottom: 62.5%; - 16:10 aspect ratio */
-        /* padding-bottom: 75%; - 4:3 aspect ratio */
-        /* padding-top: 30px; */
-        height: 0;
-        overflow: hidden;
-        box-shadow: 0 0 1rem rgba(0,0,0,0.5);
-    }
-    .embed-youtube iframe {
-        border: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    a {
-        margin: 2rem 0;
-        background-color: rgb(255, 184, 184);
-        color: black;
-        font-weight: bold;
-        border-radius: 20%;
-        padding: 16px;
-        text-decoration: none;
-        transition: all 0.1s ease-in;
-        box-shadow: 0 0 1rem rgba(0,0,0,0.5);
-    }
-    a:hover {
-        background-color: lightcoral;
-    }
-
-    /*-------------------------- responsiveness --------------------------*/
-
-    /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 768px) {
-        .container {
-            padding: 0 6rem;
-            width: 80vw;
-        }
-    }
-</style>
 <body>
-    <div class="container">
-        <h1>Ladder Logic</h1>
-        <!-- responsiveness from: https://howchoo.com/webdev/how-to-make-youtube-videos-responsive-without-js -->
-        <div class="embed-youtube">
-            <iframe width="1190" height="669" src="https://www.youtube.com/embed/9bZkp7q19f0" title="YouTube video player"
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+    <!-- ----------------------- add text popup ---------------------- -->
+    <div class="inputDiv">
+        <div class="innerInput">
+            <form id="addText">
+                <input type="text" id="textInput" pattern="^[\w\d]+.*$" title="Must not be empty" required>
+                <button type="submit" id="submit">Add</button>
+            </form>
+            <span id="closeText">&times;</span>
         </div>
-        <a href="./diagrams.html">Start</a>
     </div>
+
+    <div class="main">
+        <!-- ----------------------- toolbar ---------------------- -->
+        <div class="toolbar">
+            <div class="helpDiv">
+                <a class="questionMarkAnchor" href="./help.html" target="_blank">
+                    <img class="questionMark" src="./images/questionMark.svg" alt="question mark">
+                </a>
+            </div>
+            <h1 id="title">Ladder Logic</h1>
+            <div class="states toolbarItems">
+                <div class="item tool" id="download">
+                    <img src="./images/download.svg" alt="download icon" height="40">
+                    <p>Download</p>
+                </div>
+
+                <!-- future plans -->
+                <!-- <div class="item tool">
+                    <img src="./images/save.svg" alt="save icon" height="40">
+                    <p>Save</p>
+                </div>
+                <div class="item tool">
+                    <img src="./images/load.svg" alt="load icon" height="40">
+                    <p>Load</p>
+                </div> -->
+
+                <div class="item tool" id="clear">
+                    <img src="./images/clear.svg" alt="clear icon" height="40">
+                    <p>Clear</p>
+                </div>
+            </div>
+            <h3>Draw</h3>
+            <div class="toolbarItems">
+                <div class="drawTools">
+                    <div class="item tool" data-value="pencil" id="pencil">
+                        <img src="./images/pencil.svg" alt="pencil icon" height="40">
+                        <p>Pencil</p>
+                    </div>
+                    <div class="item tool" data-value="eraser" id="eraser">
+                        <img src="./images/eraser.svg" alt="eraser icon" height="40">
+                        <p>Eraser</p>
+                    </div>
+                </div>
+                <div class="item tool" id="text">
+                    <img src="./images/text.svg" alt="text icon" height="40">
+                    <p>Text</p>
+                </div>
+            </div>
+            <h3>Components</h3>              
+            <div class="componentParent">
+                <div class="components">
+                    <h4>Pushbuttons</h4>
+                    <section>
+                        <div class="component">
+                            <img src="./images/components/stop.png" data-scale="1" alt="stop pushbutton" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/start.png" data-scale="1" alt="start pushbutton" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/doublePushbutton.png" data-scale="2" alt="double pushbutton" height="72">
+                        </div>
+                    </section>
+                    <h4>Coils and Contacts</h4>
+                    <section>
+                        <div class="component">
+                            <img src="./images/components/load.png" data-scale="1" alt="load" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/coil.png" data-scale="1" alt="coil" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOcontact.png" data-scale="1" alt="NO contact" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCcontact.png" data-scale="1" alt="NC contact" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOonDelay.png" data-scale="1" alt="NO on-delay contact" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NConDelay.png" data-scale="1" alt="NC on-delay contact" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOoffDelay.png" data-scale="1" alt="NO off-delay contact" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCoffDelay.png" data-scale="1" alt="NC off-delay contact" height="36">
+                        </div>
+                    </section>
+                    <h4>Switches</h4>
+                    <section>
+                        <div class="component">
+                            <img src="./images/components/handOffAuto.png" data-scale="2" alt="hand off auto switch" height="72">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/toggleSwitch.png" data-scale="1" alt="toggle switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOlimitSwitch.png" data-scale="1" alt="NO limit switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NClimitSwitch.png" data-scale="1" alt="NC limit switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOtempSwitch.png" data-scale="1" alt="NO temp switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCtempSwitch.png" data-scale="1" alt="NC temp switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOpressureSwitch.png" data-scale="1" alt="NO pressure switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCpressureSwitch.png" data-scale="1" alt="NC pressure switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOfloatSwitch.png" data-scale="1" alt="NO pressure switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCfloatSwitch.png" data-scale="1" alt="NC pressure switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NOflowSwitch.png" data-scale="1" alt="NO flow switch" height="36">
+                        </div>
+                        <div class="component">
+                            <img src="./images/components/NCflowSwitch.png" data-scale="1" alt="NC flow switch" height="36">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------- work area ---------------------- -->
+        <div class="workArea">
+            <div class="workSpace" id="container"></div>
+        </div>
+    </div>
+
+    <!-- Konva.js -->
+    <script src="./js/konva.min.js"></script>
+    
+    <script src="./js/script.js"></script>
 </body>
 </html>
