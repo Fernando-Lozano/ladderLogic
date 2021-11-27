@@ -1,4 +1,6 @@
-# About
+[Ladder Logic](https://fernando-lozano.github.io/ladderLogic/)
+
+## About
 This web app will provide a quick and easy way to draw and print small electrical ladder diagrams. I might add a landing page with a simple video demonstrating the functionality.
 
 ## Technologies:
