@@ -1,29 +1,12 @@
 [Ladder Logic](https://fernando-lozano.github.io/ladderLogic/)
 
 ## About
-This web app will provide a quick and easy way to draw and print small electrical ladder diagrams. I might add a landing page with a simple video demonstrating the functionality.
+This web app will provide a quick and easy way to draw and print small electrical ladder diagrams.
 
 ## Technologies:
 - Konva.js
 
 ## Tasks:
-- add video to landing page
-- match video instructions with help page instructions
-
-## VideoPlan:
- - draw lines
- - erase line mistake
- - add components
- - remove extra components
- - add text
- - remove text
- - move text
- - download PNG
- - clear work area
-
- - smooth transitions
- - background music
- - written guide at the bottom of the video
 
 ## Future Plans:
 - add save and load functionality

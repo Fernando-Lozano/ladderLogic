@@ -64,7 +64,7 @@ body {
 #closeText {
   line-height: 0.5;
   position: absolute;
-  top: 0;
+  top: 2px;
   right: 0;
   color: #aaaaaa;
   font-size: 28px;
